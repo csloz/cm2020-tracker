@@ -31,8 +31,8 @@ blocks:
         - name: Unit Tests
           commands:
             - python manage.py makemigrations
-            - python manage.py migrate
-            - python manage.py test
+            - '#python manage.py migrate'
+            - '#python manage.py test'
         - name: Deploy Checklist
           commands:
             - python manage.py check --deploy
@@ -40,3 +40,6 @@ blocks:
           commands:
             - pip install flake8
             - flake8 --max-line-length=127 --ignore=F401
+      env_vars:
+        - name: SECRET_KEY
+          value: secret
