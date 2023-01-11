@@ -27,15 +27,13 @@ blocks:
       jobs:
         - name: Unit Tests
           commands:
-            - cd tracker
             - python manage.py makemigrations
             - python manage.py migrate
             - python manage.py test
         - name: Deploy Checklist
           commands:
-            - cd tracker
             - python manage.py check --deploy
         - name: Style
           commands:
             - pip install flake8
-            - flake8 tracker/ --max-line-length=127
+            - flake8 --max-line-length=127
